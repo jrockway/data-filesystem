@@ -36,7 +36,7 @@ class Data::Filesystem::Directory with Data::Filesystem::Item {
         return $self->_get_file($name);
     }
 
-    multi method get(Path $path){
+    multi method get(Path $path does coerce){
         my ($first, @rest) = @$path;
 
         if(!@rest){
